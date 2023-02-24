@@ -1,0 +1,175 @@
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+<hr />
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Vairable</th>
+                <th>Pipe</th>
+                <th>Salida</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ name }}</td>
+                <td>uppercase</td>
+                <td>{{ name | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>lowercase</td>
+                <td>{{ name | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>slice: 3</td>
+                <td>{{ name | slice: 3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>slice: 2: 7</td>
+                <td>{{ name | slice: 2:7 }}</td>
+            </tr>
+            <tr>
+                <td>{{ myArray }}</td>
+                <td>slice: 7</td>
+                <td>{{ myArray | slice: 7 }}</td>
+            </tr>
+            <tr>
+                <td>{{ myArray }}</td>
+                <td>slice: 5: 8</td>
+                <td>{{ myArray | slice: 5:7 }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number: '3.0-5'</td>
+                <td>{{ PI | number: "3.0-5" }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number: '3.6-10'</td>
+                <td>{{ PI | number: "3.6-10" }}</td>
+            </tr>
+            <tr>
+                <td>{{ percentage }}</td>
+                <td>percent</td>
+                <td>{{ percentage | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{ percentage }}</td>
+                <td>percent: '3.0-2'</td>
+                <td>{{ percentage | percent: "3.0-2" }}</td>
+            </tr>
+            <tr>
+                <td>{{ salary }}</td>
+                <td>currency</td>
+                <td>{{ salary | currency }}</td>
+            </tr>
+            <tr>
+                <td>{{ salary }}</td>
+                <td>currency: 'EUR'</td>
+                <td>{{ salary | currency: "EUR" }}</td>
+            </tr>
+            <tr>
+                <td>{{ salary }}</td>
+                <td>currency: 'CAD': 'symbol': '.0-0'</td>
+                <td>{{ salary | currency: "CAD":"symbol":".0-0" }}</td>
+            </tr>
+            <tr>
+                <td>{{ myPromise }}</td>
+                <td>
+                    <!-- {{ myPromise | json }} -->
+                </td>
+                <td>{{ myPromise | async }}</td>
+            </tr>
+            <tr>
+                <td>{{ myDate }}</td>
+                <td>date</td>
+                <td>{{ myDate | date }}</td>
+            </tr>
+            <tr>
+                <td>{{ myDate }}</td>
+                <td>date: 'cccc, dd-MMMM-yyyy HH:mm:ss'</td>
+                <td>{{ myDate | date: "cccc, dd-MMMM-yyyy HH:mm:ss" }}</td>
+            </tr>
+            <tr>
+                <td>{{ myDate }}</td>
+                <td>
+                    <button (click)="myLanguage = 'es-MX'" class="btn btn-primary mr-1">
+            Español
+          </button>
+                    <button (click)="myLanguage = 'en'" class="btn btn-success mr-1">
+            English
+          </button>
+                    <button (click)="myLanguage = 'fr'" class="btn btn-warning mr-1">
+            Francés
+          </button>
+                    <button (click)="myLanguage = 'de'" class="btn btn-info mr-1">
+            Alemán
+          </button>
+                </td>
+                <td>
+                    {{ myDate | date: "cccc, dd-MMMM-yyyy HH:mm:ss":"":myLanguage }}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ nameUnCapital }}</td>
+                <td>unCapital: '†': true</td>
+                <td>{{ nameUnCapital | unCapital: "†":true }}</td>
+            </tr>
+            <tr>
+                <td>{{ nameUnCapital }}</td>
+                <td>unCapital: '†'</td>
+                <td>{{ nameUnCapital | unCapital: "†" }}</td>
+            </tr>
+            <tr>
+                <td>{{ nameUnCapital }}</td>
+                <td>capitalize</td>
+                <td>{{ nameUnCapital | capitalize }}</td>
+            </tr>
+            <tr>
+                <td>{{ nameUnCapital }}</td>
+                <td>capitalize: true</td>
+                <td>{{ nameUnCapital | capitalize: true }}</td>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>
+                    {{ valueHidePassword }}
+                    <button (click)="doHidePassword();" class="btn btn-outline-primary ml-1">
+                        {{ lbHidePassword }}
+                    </button>
+                </td>
+                <td>{{ name | hidePassword: valueHidePassword }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Slice</h4>
+<hr />
+<ul>
+    <li class="align-left" *ngFor="let item of myArray | slice: 8:20">
+        {{ item }}
+    </li>
+</ul>
+
+<h3>Javascript Object Notation</h3>
+<hr />
+<div class="row-mb-3">
+    <div class="col">
+        <pre>
+            {{ person | json }}
+        </pre>
+    </div>
+</div>
+
+<h3>Domseguro</h3>
+<hr />
+<div class="row">
+    <div class="col mb-4">
+        <iframe width="560" height="315" [src]="video | domseguro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+</div>
