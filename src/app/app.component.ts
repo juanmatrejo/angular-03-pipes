@@ -15,7 +15,7 @@ export class AppComponent {
     myDate: Date = new Date();
     myLanguage: string = 'es-MX';
     nameUnCapital: string = 'juAn maNUEl tREjo eSpInoZa';
-    video: string = 'https://www.youtube.com/embed/HKWqzjQAv14';
+    video: string = 'https://www.youtube.com/embed/Ckom3gf57Yw';
     lbHidePassword: string = 'Hide';
     valueHidePassword: boolean = false;
 
